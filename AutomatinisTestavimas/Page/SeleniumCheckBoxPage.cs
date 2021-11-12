@@ -10,14 +10,11 @@ namespace AutomatinisTestavimas.Page
 {
     public class SeleniumCheckBoxPage : BasePage
     {
+        private IWebElement _singleCheckbox => Driver.FindElement(By.Id("isAgeSelected"));
+        private IWebElement _singleCheckboxResult => Driver.FindElement(By.Id("txtAge"));
+        private IReadOnlyCollection<IWebElement> _multipleCheckbox => Driver.FindElements(By.ClassName("cb1-element"));
+        private IWebElement _button => Driver.FindElement(By.Id("check1"));
 
-        private IWebElement _singleCheckbox => Driver.FindElement(By.CssSelector("#isAgeSelected"));
-        private IWebElement _singleCheckboxResult => Driver.FindElement(By.CssSelector("#txtAge"));
-        private IReadOnlyCollection<IWebElement> _multipleCheckbox => Driver.FindElements(By.CssSelector("div.checkbox:nth-child" +
-            "(6) > label:nth-child(1) > input:nth-child(1)"));
-        private IWebElement _button => Driver.FindElement(By.CssSelector("#check1"));
-
-       
         public SeleniumCheckBoxPage(IWebDriver webDriver) : base(webDriver)
         { }
 

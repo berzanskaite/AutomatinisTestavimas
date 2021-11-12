@@ -56,8 +56,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckBoxes.cs" />
+    <Compile Include="Page\BasePage.cs" />
+    <Compile Include="Page\IWebelement.cs" />
+    <Compile Include="Page\SeleniumCheckBoxPage.cs" />
+    <Compile Include="Page\SeleniumInputPage.cs" />
+    <Compile Include="Page\VartuTechnikaPage.cs" />
+    <Compile Include="Test\SeleniumCheckBoxTest.cs" />
+    <Compile Include="Test\SeleniumInputTest.cs" />
+    <Compile Include="Test\VartuTechnikaTest.cs" />
     <Compile Include="Uzd1_Narsykles.cs" />
-    <Compile Include="Uzd2_CheckBoxes.cs" />
     <Compile Include="VartuTechnika.cs" />
     <Compile Include="NamuDarbas.cs" />
     <Compile Include="WebDriver.cs" />
@@ -67,6 +74,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -57,7 +57,6 @@
   <ItemGroup>
     <Compile Include="CheckBoxes.cs" />
     <Compile Include="Page\BasePage.cs" />
-    <Compile Include="Page\IWebelement.cs" />
     <Compile Include="Page\SeleniumCheckBoxPage.cs" />
     <Compile Include="Page\SeleniumInputPage.cs" />
     <Compile Include="Page\VartuTechnikaPage.cs" />

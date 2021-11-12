@@ -8,23 +8,19 @@ using System.Threading.Tasks;
 
 namespace AutomatinisTestavimas.Page
 {
-    public class SeleniumCheckBoxPage
+    public class SeleniumCheckBoxPage : BasePage
     {
-        private static IWebDriver _driver;
 
-        private IWebElement _singleCheckbox => _driver.FindElement(By.CssSelector("#isAgeSelected"));
-        private IWebElement _singleCheckboxResult => _driver.FindElement(By.CssSelector("#txtAge"));
-        private IReadOnlyCollection<IWebElement> _multipleCheckbox => _driver.FindElements(By.CssSelector("div.checkbox:nth-child" +
+        private IWebElement _singleCheckbox => Driver.FindElement(By.CssSelector("#isAgeSelected"));
+        private IWebElement _singleCheckboxResult => Driver.FindElement(By.CssSelector("#txtAge"));
+        private IReadOnlyCollection<IWebElement> _multipleCheckbox => Driver.FindElements(By.CssSelector("div.checkbox:nth-child" +
             "(6) > label:nth-child(1) > input:nth-child(1)"));
-        private IWebElement _button => _driver.FindElement(By.CssSelector("#check1"));
+        private IWebElement _button => Driver.FindElement(By.CssSelector("#check1"));
 
-        public SeleniumCheckBoxPage(IWebDriver webDriver)
-        {
-            _driver = webDriver;
-        }
+       
+        public SeleniumCheckBoxPage(IWebDriver webDriver) : base(webDriver)
+        { }
 
-        //public SeleniumCheckBoxPage(IWebDriver webDriver) : base(webDriver)
-        //{ }
 
         public void ClickSingleCheckbox(bool pazymetas)
         {

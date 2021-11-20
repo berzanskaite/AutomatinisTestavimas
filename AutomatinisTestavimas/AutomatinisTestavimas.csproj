@@ -56,13 +56,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckBoxes.cs" />
+    <Compile Include="Drivers\Browsers.cs" />
+    <Compile Include="Drivers\CustomDriver.cs" />
     <Compile Include="Page\BasePage.cs" />
+    <Compile Include="Page\DropDownPage.cs" />
     <Compile Include="Page\SeleniumCheckBoxPage.cs" />
     <Compile Include="Page\SeleniumInputPage.cs" />
     <Compile Include="Page\VartuTechnikaPage.cs" />
+    <Compile Include="Test\BaseTest.cs" />
+    <Compile Include="Test\DropDownTest.cs" />
     <Compile Include="Test\SeleniumCheckBoxTest.cs" />
     <Compile Include="Test\SeleniumInputTest.cs" />
     <Compile Include="Test\VartuTechnikaTest.cs" />
+    <Compile Include="Tools\MyScreenshot.cs" />
     <Compile Include="Uzd1_Narsykles.cs" />
     <Compile Include="VartuTechnika.cs" />
     <Compile Include="NamuDarbas.cs" />

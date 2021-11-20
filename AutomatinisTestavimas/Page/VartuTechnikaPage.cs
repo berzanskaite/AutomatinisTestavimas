@@ -11,18 +11,26 @@ namespace AutomatinisTestavimas.Page
 {
     public class VartuTechnikaPage : BasePage
     {
-        private static IWebDriver _driver;
-
-        private IWebElement _plocioLaukelis => _driver.FindElement(By.Id("doors_width"));
-        private IWebElement _aukscioLaukelis => _driver.FindElement(By.Id("doors_height"));
-        private IWebElement _automatikaCheckBox => _driver.FindElement(By.Id("automatika"));
-        private IWebElement _montavimasCheckBox => _driver.FindElement(By.Id("darbai"));
-        private IWebElement _calculateButton => _driver.FindElement(By.Id("calc_submit"));
-        private IWebElement _resultBox => _driver.FindElement(By.CssSelector("#calc_result > div"));
+        private const string PageAddress = "http://vartutechnika.lt/";
+        private IWebElement _plocioLaukelis => Driver.FindElement(By.Id("doors_width"));
+        private IWebElement _aukscioLaukelis => Driver.FindElement(By.Id("doors_height"));
+        private IWebElement _automatikaCheckBox => Driver.FindElement(By.Id("automatika"));
+        private IWebElement _montavimasCheckBox => Driver.FindElement(By.Id("darbai"));
+        private IWebElement _calculateButton => Driver.FindElement(By.Id("calc_submit"));
+        private IWebElement _resultBox => Driver.FindElement(By.CssSelector("#calc_result > div"));
 
         //konstruktorius
         public VartuTechnikaPage(IWebDriver webDriver) : base(webDriver)
-        { }
+        {
+            Driver.Url = PageAddress;
+        }
+
+        public VartuTechnikaPage NavigateToDefaultPage()
+        {
+            if (Driver.Url != PageAddress)
+                Driver.Url = PageAddress;
+            return this;
+        }
 
         public void IvestiPloti(string plotis)
         {
@@ -58,7 +66,7 @@ namespace AutomatinisTestavimas.Page
 
         private void WaitForResult()
         {
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
             wait.Until(d => _resultBox.Displayed);
         }
 

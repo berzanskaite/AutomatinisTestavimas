@@ -70,5 +70,19 @@ namespace AutomatinisTestavimas
             Assert.AreEqual(0, kiek, "Kazkurie chekboxai pazymeti");
         }
 
+        [Test]
+        public static void ClickSingleCheckbox()
+        {
+            IWebElement singleCheckbox = _driver.FindElement(By.Id("isAgeSelected"));
+            IWebElement singleCheckboxResult = _driver.FindElement(By.Id("txtAge"));
+            bool pazymetas = true;
+            if (pazymetas != singleCheckbox.Selected)
+            {
+                singleCheckbox.Click();
+            }
+            string expectedResult = "Success - Check box is checked";
+            Assert.AreEqual(expectedResult, singleCheckboxResult.Text, "Tekstas neatsirado");
+        }
+
     }
 }
